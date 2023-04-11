@@ -16,39 +16,40 @@
 #
 
 # The Google Cloud project to use for this tutorial
-export PROJECT_ID="credible-runner-340002"
+export PROJECT_ID="data-engineering-230006"
 
 # The Compute Engine region to use for running Dataflow jobs and create a
 # temporary storage bucket
 export REGION_ID="us-east1"
 
 # The Cloud Storage bucket to use as a temporary bucket for Dataflow
-export TEMP_GCS_BUCKET="credible-runner-340002-bucket"
+export PREFIX_NAME="auto-data-tokenize-001"
+export TEMP_GCS_BUCKET=${PREFIX_NAME}"-bucket"
 
 # Name of the service account to use (not the email address)
 # (e.g. tokenizing-runner)
-export DLP_RUNNER_SERVICE_ACCOUNT_NAME="[SERVICE_ACCOUNT_NAME_FOR_RUNNER]"
+export DLP_RUNNER_SERVICE_ACCOUNT_NAME=${PREFIX_NAME}"-sa"
 
 # Fully Qualified Entry Group Id to use for creating/searching for Entries
 # in Data Catalog for non-BigQuery entries.
 # The ID must begin with a letter or underscore, contain only English letters, numbers and underscores, and be at most 64 characters.
 # Refer: https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups/create#query-parameters
-export DATA_CATALOG_ENTRY_GROUP_ID="[NON_BIGQUERY_DATA_CATALOG_ENTRY_GROUP]"
+export DATA_CATALOG_ENTRY_GROUP_ID=${PREFIX_NAME}"-data-catalog"
 
 # The Data Catalog Tag Template Id to use
 # for creating sensitivity tags in Data Catalog.
 # The ID must contain only lowercase letters (a-z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum size is 64 bytes when encoded in UTF-8
 # Refer: https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#query-parameters
-export INSPECTION_TAG_TEMPLATE_ID="[DATA_CATALOG_TAG_TEMPLATE_NAME]"
+export INSPECTION_TAG_TEMPLATE_ID=${PREFIX_NAME}"-tag-template"
 
 # Name of the GCP KMS key ring name
-export KMS_KEYRING_ID="[key-ring-name]"
+export KMS_KEYRING_ID=${PREFIX_NAME}"-kms-key-ring"
 
 # name of the symmetric Key encryption kms-key-id
-export KMS_KEY_ID="[key-id]"
+export KMS_KEY_ID=${PREFIX_NAME}"-symmetric-key"
 
 # The JSON file containing the TINK Wrapped data-key to use for encryption
-export WRAPPED_KEY_FILE="[path-to-the-data-encryption-key-file]"
+export WRAPPED_KEY_FILE="./${PREFIX_NAME}-wrapped_key_file"
 
 ######################################
 #      DON'T MODIFY LINES BELOW      #

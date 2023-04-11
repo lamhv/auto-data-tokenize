@@ -60,6 +60,7 @@ includedPermissions:
   - storage.objects.list
   - storage.objects.update
   - storage.objects.delete
+  - storage.buckets.create
   # KMS permissions
   - cloudkms.cryptoKeyVersions.useToDecrypt
   - cloudkms.cryptoKeyVersions.useToEncrypt
